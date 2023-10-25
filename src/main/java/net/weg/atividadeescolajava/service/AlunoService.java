@@ -13,6 +13,8 @@ public class AlunoService {
 
     private AlunoRepository alunoRepository;
 
+    public Aluno salvar (Aluno aluno){ return alunoRepository.save(aluno) ;}
+
     public Aluno buscarUm(Long id){
         return alunoRepository.findById(id).get();
     }

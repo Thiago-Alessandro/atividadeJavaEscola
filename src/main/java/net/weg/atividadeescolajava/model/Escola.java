@@ -1,5 +1,6 @@
 package net.weg.atividadeescolajava.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,10 +23,12 @@ public class Escola {
     private Endereco endereco;
     private String email;
     @OneToMany(mappedBy = "escola")
+    @JsonIgnore
     private List<Professor> listaDeProfessores;
     @OneToMany
     private List<Curso> listaDeCursos;
     @OneToOne
+    @JsonIgnore
     private Diretor diretor;
 
 }
